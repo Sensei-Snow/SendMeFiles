@@ -1,0 +1,9 @@
+{
+    "extensions": [
+        ".jpg",
+        ".jpeg",
+        ".png",
+        ".gif"
+    ],
+    "size": 1000
+}

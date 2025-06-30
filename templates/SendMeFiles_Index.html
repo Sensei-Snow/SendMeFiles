@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="icon" type="image/png" href="../static/assets/favicon.png">
+        <title>SendMeFiles - Accueil</title>
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='SendMeFiles_Style.css') }}">
+    </head>
+
+    <body>
+        <header>
+            <div class="logo-top">
+                <img src="../static/assets/favicon.png" alt="Logo SendMeFiles" style="width: 70%;">
+            </div>
+            <div class="title-top">
+                <h1>SendMeFiles</h1>
+            </div>
+        </header>
+
+        <main>
+            <div class="title_file">
+                <h1>Envoyer un fichier à : {{infos['hostname']}}</h1>
+            </div>
+            <div class="form_file">
+                <form method="post" enctype="multipart/form-data" action="/upload">
+                    <input type="file" name="files" id="fileInput" multiple style="display: none;">
+                    <label for="fileInput" class="custom-file-button">📁 Sélectionner des fichiers</label>
+                    <br><br>
+                    <table id="fileTable" border="1">
+                        <thead>
+                            <tr>
+                                <th>Nom du fichier</th>
+                                <th>Taille</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="2" style="text-align:center; color: gray; font-style: italic;">
+                                    Aucun fichier sélectionné
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <input type="submit" id="fileSend" value="Envoyer" style="display: none;">
+                    <label for="fileSend" class="custom-file-button">📤 Envoyer</label>
+                </form>
+                <script>
+                    document.getElementById("fileInput").addEventListener("change", function () {
+                        const files = this.files;
+                        const table = document.getElementById("fileTable");
+                        const tbody = table.querySelector("tbody");
+
+                        tbody.innerHTML = "";
+
+                        for (let i = 0; i < files.length; i++) {
+                            const row = document.createElement("tr");
+
+                            const nameCell = document.createElement("td");
+                            nameCell.textContent = files[i].name;
+
+                            const sizeCell = document.createElement("td");
+                            const sizeMo = (files[i].size / (1024 * 1024)).toFixed(2);
+                            sizeCell.textContent = sizeMo + " Mo";
+
+                            row.appendChild(nameCell);
+                            row.appendChild(sizeCell);
+                            tbody.appendChild(row);
+                        }
+                    });
+                </script>
+            </div>
+        </main>
+    </body>
+</html>

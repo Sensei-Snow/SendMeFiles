@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+}
+
+header {
+    background-color: #5e3fa1;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+.logo-top {
+    width: 75px;
+    margin-right: 15px;
+}
+
+.title-top {
+    color: white;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #1e1e1e;
+    color: white;
+}
+
+main {
+    margin-top : 50px;
+    margin-left: 15%;
+    margin-right: 15%;
+    border: solid 3px #5e3fa1;
+    border-radius: 10px;
+}
+
+.title_file {
+    margin-top: 20px;
+}
+
+.form_file {
+    margin-top: 30px;
+    margin-bottom: 70px;
+}
+
+.form_connect {
+    margin-top: 30px;
+}
+
+.custom-file-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1976d2;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.custom-file-button:hover {
+    background-color: #145ca1;
+}
+
+#fileTable {
+    margin: 10px auto;
+    border-collapse: collapse;
+    width: 80%;
+    text-align: left;
+}
+
+.success_message {
+    margin-top: 20px;
+}
+
+.redirect_message {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="icon" type="image/png" href="../static/assets/favicon.png">
+        <title>SendMeFiles - Erreur</title>
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='SendMeFiles_Style.css') }}">
+
+        <script>
+            let countdown = 3;
+            function updateCountdown() {
+                if (countdown > 0) {
+                    document.getElementById("timer").innerText = countdown;
+                    countdown--;
+                    setTimeout(updateCountdown, 1000);
+                } else {
+                    window.location.href = "/";
+                }
+            }
+            window.onload = updateCountdown;
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <div class="logo-top">
+                <img src="../static/assets/favicon.png" alt="Logo SendMeFiles" style="width: 70%;">
+            </div>
+            <div class="title-top">
+                <h1>SendMeFiles</h1>
+            </div>
+        </header>
+        <main>
+            <div class="success_message">
+                <h1>Pas de fichier sélectionné !</h1>
+            </div>
+            <div class="redirect_message">
+                <p>Redirection dans <span id="timer">3</span> secondes...</p>
+            </div>
+        </main>
+    </body>
+</html>
