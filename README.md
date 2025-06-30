@@ -1,6 +1,6 @@
 # SendMeFiles
 
-<h3>Here is the code for SendMeFiles, a simple but complete application to send files to a computer with Python.</h3>
+<h3>Here is the code for SendMeFiles, a simple but complete application to send files to a computer on the same network with Python.</h3>
 <br>
 
 <div align="center">
