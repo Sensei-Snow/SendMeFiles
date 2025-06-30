@@ -1,0 +1,5 @@
+Flask
+Werkzeug
+plyer
+PyQt6
+pyperclip
